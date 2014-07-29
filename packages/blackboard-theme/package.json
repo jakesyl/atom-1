@@ -1,0 +1,26 @@
+{
+  "name": "blackboard-theme",
+  "theme": "syntax",
+  "version": "0.1.1",
+  "description": "A modified adaptation of the Blackboard TxMt theme for Atom.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ltackett/atom-blackboard-theme"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# Blackboard Theme\n\nA *modified* adaptation of the Blackboard TxMt theme for Atom.\n\n### Modified?\n\nYes. The comment color is different.\n\n![screenshot](http://f.cl.ly/items/0B0E413G3N47231R2V2e/Screen%20Shot%202014-04-07%20at%203.49.16%20PM.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ltackett/atom-blackboard-theme/issues"
+  },
+  "homepage": "https://github.com/ltackett/atom-blackboard-theme",
+  "_id": "blackboard-theme@0.1.1",
+  "dist": {
+    "shasum": "992d1a3b09579d6cda8e0d760b3b5607dad33abf"
+  },
+  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114525-49052-zf1l7v/package.tgz",
+  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114525-49052-zf1l7v/package.tgz"
+}

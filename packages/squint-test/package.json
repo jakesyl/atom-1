@@ -1,0 +1,31 @@
+{
+  "name": "squint-test",
+  "main": "./lib/squint-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Run a squint test on your code!",
+  "activationEvents": [
+    "squint-test:toggle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidcelis/squint-test"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# Squint Test for Atom.app\n\nThe Squint Test is a test you can perform visually against your code. It's simple: you take a step back from your display, squint your eyes, and look at your code. Look specifically for changes in chape and changes in color. Changes in shape mean you may have a lot of nested conditionals, while changes in color mean your code may not have the same level of abstraction.\n\nHowever, we're programmers. Our eyes are precious. Why use your eyes to squint when you can use your editor?\n\n![squint-test](https://i.cloudup.com/YIBJxeIWNb-3000x3000.png)\n\nTo perform a squint test on your code in Atom, simply bring up the command palette (⌘⇧P) and use the \"Squint Test: Toggle\" command. Alternatively, use the provided keyboard shortcut (^⌥s).\n\nThis package was inspired by a talk given by [Sandi Metz](http://www.sandimetz.com) at [Ruby on Ales 2014](https://ruby.onales.com) titled \"All the Little Things\". Thank you, Sandi!\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/davidcelis/squint-test/issues"
+  },
+  "homepage": "https://github.com/davidcelis/squint-test",
+  "_id": "squint-test@1.0.0",
+  "dist": {
+    "shasum": "823bb20dee26c7537263c72f1685557fa41bc250"
+  },
+  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114517-46848-coedhc/package.tgz",
+  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114517-46848-coedhc/package.tgz"
+}

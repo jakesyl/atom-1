@@ -1,0 +1,29 @@
+{
+  "name": "project-colorize",
+  "main": "./lib/project-colorize",
+  "version": "0.1.0",
+  "description": "Color the tab bar background to differentiate between different open projects in Atom.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonporritt/project-colorize"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "geopattern": "*"
+  },
+  "readme": "# project-colorize package\n\nColorizes the area behind the tabs based on the project directory. Uses [btmills' implementation of geopattern](https://github.com/btmills/geopattern) for extra awesome.\n\n![Example of tab bar coloring](https://raw.githubusercontent.com/jasonporritt/project-colorize/master/example.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/jasonporritt/project-colorize/issues"
+  },
+  "homepage": "https://github.com/jasonporritt/project-colorize",
+  "_id": "project-colorize@0.1.0",
+  "dist": {
+    "shasum": "486f2c4cf37b52821d43c4c0f946c72ed69eb310"
+  },
+  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-91552-1o89qud/package.tgz",
+  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-91552-1o89qud/package.tgz"
+}

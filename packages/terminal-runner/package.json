@@ -1,0 +1,31 @@
+{
+  "name": "terminal-runner",
+  "main": "./lib/terminal-runner.coffee",
+  "version": "0.0.2",
+  "description": "Run commands remotely in a terminal session. Awesome for running tests or build commands.",
+  "activationEvents": [
+    "terminal-runner:run-command",
+    "terminal-runner:run-last-command"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lackac/terminal-runner"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# Terminal Runner Atom Package\n\nRun commands remotely in a terminal session. Awesome for running tests or build commands.\n\nRequires the [terminal](https://github.com/atom/terminal) package. **Same disclaimer applies**: This package is alpha and probably buggy. Proceed at your own risk!\n\nYou can run a command with `ctrl-r` or from the command palette via `cmd-p`, typing '*run com*', and selecting the '*Terminal Runner: Run Command*' command. The first time you run a command a new terminal session will be opened which will be reused for subsequent commands. You can run the last command again without the command prompt with `ctrl-shift-r`.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/lackac/terminal-runner/issues"
+  },
+  "homepage": "https://github.com/lackac/terminal-runner",
+  "_id": "terminal-runner@0.0.2",
+  "dist": {
+    "shasum": "94514d86ed46b3b62c0e5f34a5fb7d49376a4b51"
+  },
+  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-93789-1g107za/package.tgz",
+  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-93789-1g107za/package.tgz"
+}
