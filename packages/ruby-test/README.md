@@ -12,7 +12,12 @@ Click the `Install` button.
 
 ## Configure
 
+IMPORTANT: Before configuring ruby-test, toggle to the test panel to activate
+the package: `cmd-ctrl-x`.
+
 ![Ruby Test Settings view](http://cl.ly/image/1l3H0g1C1J3g/ruby-test-settings.png)
+
+**Shell**: executable or path to shell (e.g. `fish`, `/bin/zsh`)
 
 ## Run
 
@@ -32,14 +37,8 @@ Open the test file you want to run, then issue one of the following:
 * Run previous test
 * Configure the shell commands that run the tests
 * Supports Ruby managers, like `rvm` and `rbenv`
+* Supports bash and z-shell
 * Supports TestUnit, Rspec, and Cucumber
-
-## How To
-
-### Zeus + RSpec color output
-
-* In rspec_helper.rb, add `config.tty = true` to the
-  `RSpec.configure do |config| ...` block
 
 ## Contributing
 

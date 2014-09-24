@@ -1,29 +1,37 @@
 {
   "name": "project-manager",
   "main": "./lib/project-manager",
-  "version": "1.5.0",
+  "version": "1.9.0",
   "description": "Project Manager for easy access and switching between projects in Atom.",
   "repository": {
     "type": "git",
     "url": "https://github.com/danielbrodin/atom-project-manager"
   },
   "license": "MIT",
+  "keywords": [
+    "project",
+    "manager",
+    "settings",
+    "workflow",
+    "productivity"
+  ],
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "season": "1.x"
+    "season": "1.x",
+    "underscore-plus": "1.5.1"
   },
-  "readme": "# Project Manager\n\n![Project Manager](https://raw.github.com/danielbrodin/atom-project-manager/master/project-manager.gif)\n\nA package for saving your projects for fast and easy access, similiar to the one in Sublime Text.\n\n## Installation\n```sh\napm install project-manager\n```\nor find it in the Packages tab under settings\n\n## Usage\nAll commands can also be found in the Packages menu\n### List projects\n`ctrl-cmd-p` (mac) / `ctrl-shift-alt-p` (win & linux) or **Project Manager** in the Command Palette.\n\n### Save project\n**Save Project** in the Command Palette and write the title you want to save the project as.\n\n### Edit projects\nAll projects are saved in a `.cson` file which you can easily reach by searching for **Edit Projects** in the Command Palette.\n\n## Settings\n### Editor `settings:`\nAtom allows some editor specific settings which can now manually be added to the `projects.cson` file under a `settings` object.\nThe settings currently available are `setSoftTabs`, `setSoftWrap`and `setTabLength`. After making a change to the settings they can be updated by searching for **Reload Project Settings** under the Command Palette.\n\n### List `icon:`\nThis changes the icon displayed next to the project title in the list view. The icon is class-based, so you can either use the classes already provided by Atom like `icon-squirrel` or make your own class (target `:before`). The GitHub [octicon](https://github.com/styleguide/css/7.0) font is available to use, and most, if not all classes, just replace `octicon-` with `icon-`.\n\n### Example\n```CoffeeScript\n'Project Manager':\n  'title': 'Project Manager'\n  'icon': 'icon-squirrel'\n  'paths': [\n    '/path/to/project-manager'\n  ]\n  'settings':\n    'setSoftTabs': true  # Enable or disable soft tabs for this editor\n    'setSoftWrap': true  # Enable or disable soft wrap for this editor.\n    'setTabLength': 2    # Set the on-screen length of tab characters.\n```\n\n### Atom Settings\n**Show Path:** Shows the path in the list view\n\n**Close Current:** Closes the current window before opening the new project\n\n## Todo\n- Add multiple directories to a project (Can not currently be done in Atom)\n",
+  "readme": "# Project Manager\n\n![Project Manager](https://raw.github.com/danielbrodin/atom-project-manager/master/project-manager.gif)\n\nA package for saving your projects for fast and easy access.\n\n## Installation\n```sh\napm install project-manager\n```\nor find it in the Packages tab under settings\n\n## Usage\nAll commands can also be found in the Packages menu\n### List projects\n`ctrl-cmd-p` (mac) / `ctrl-shift-alt-p` (win & linux) or **Project Manager** in the Command Palette.\n\n### Save project\n**Project Manager: Save Project** in the Command Palette and write the title you want to save the project as.\n\n### Edit projects\nAll projects are saved in a `.cson` file which you can easily reach by searching for **Project Manager: Edit Projects** in the Command Palette.\n\n## Project Settings\n### `settings:`\nUnder settings you can set everything that you can have in the `config.cson` file which is what you see under the settings view.\nThe formatting should be as follows:\n```\n'settings':\n  'editor.tabLength': 2\n  'project-manager.showPath': true\n```\nThe settings will be updated on change, but can also manually be done from the command palette with **Project Manager: Reload Project Settings**\n\n### `devMode:`\nWill open the project in dev mode. The API for this doesn't work perfectly though so if you try to switch to a project that is already open in dev mode, a new window will open.\n\n### `icon:`\nThis changes the icon displayed next to the project title in the list view. The icon is class-based, so you can either use the classes already provided by Atom like `icon-squirrel` or make your own class (target `:before`). The GitHub [octicon](https://github.com/styleguide/css/7.0) font is available to use, and most, if not all classes, just replace `octicon-` with `icon-`.\n\n### `template:`\nYou can specify a template in the `projects.cson` file to share settings between projects. The settings will merge so you can still specify project specific settings.\n\n### Example\n```CoffeeScript\n'Project Manager':\n  'title': 'Project Manager'\n  'devMode': true\n  'template': 'coffeescript-template'\n  'paths': [\n    '/path/to/project-manager'\n  ]\n  'settings':\n    'editor.showIndentGuide': false\n    'project-manager:showPath': true\n\n'coffeescript-template':\n  'icon': 'icon-coffeescript'\n  'settings':\n    'editor.tabLength': 2\n    'editor.preferredLineLength': 80\n```\n\n## Package Settings\n**Show Path:** Shows the path in the list view\n\n**Close Current:** Closes the current window before opening the new project\n\n**Environment Specific Projects:** Use `projects.[hostname].cson` instead of `projects.cson`\n\n**Sort By Title:** Sorts the projects list by title in ascending order",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/danielbrodin/atom-project-manager/issues"
   },
   "homepage": "https://github.com/danielbrodin/atom-project-manager",
-  "_id": "project-manager@1.5.0",
+  "_id": "project-manager@1.9.0",
   "dist": {
-    "shasum": "2f4d98b6907464e42c7313b6272f5569f313c15d"
+    "shasum": "7ac645bb23870b236c5ad0b0dc25cc55e985fbe7"
   },
-  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114629-15523-y0u9no/package.tgz",
-  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114629-15523-y0u9no/package.tgz"
+  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114816-14902-rcakne/package.tgz",
+  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114816-14902-rcakne/package.tgz"
 }

@@ -1,7 +1,7 @@
 {
   "name": "tabs-to-spaces",
   "main": "./lib/index",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Provides the ability to convert between leading tabs and spaces in a document",
   "repository": {
     "type": "git",
@@ -15,7 +15,6 @@
     "emissary": "1.x"
   },
   "devDependencies": {
-    "fs-plus": "2.x",
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
@@ -30,10 +29,10 @@
     "url": "https://github.com/lee-dohm/tabs-to-spaces/issues"
   },
   "homepage": "https://github.com/lee-dohm/tabs-to-spaces",
-  "_id": "tabs-to-spaces@0.4.1",
+  "_id": "tabs-to-spaces@0.4.2",
   "dist": {
-    "shasum": "03115d59f22da33dc8826a8447feaa1fe4609b46"
+    "shasum": "6f12c93516f435e3a2191c143cbd8c366dae7096"
   },
-  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-93896-14y8akp/package.tgz",
-  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114625-93896-14y8akp/package.tgz"
+  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114629-24856-1328jzy/package.tgz",
+  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114629-24856-1328jzy/package.tgz"
 }

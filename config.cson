@@ -4,11 +4,18 @@
   'showIndentGuide': true
   'showInvisibles': true
   'normalizeIndentOnPaste': false
+  'invisibles': {}
 'core':
   'audioBeep': false
   'disabledPackages': [
     'autocomplete-plus'
     'markdown-format'
+    'term'
+    'git-show'
+    'deprecation-cop'
+    'exception-reporting'
+    'feedback'
+    'autocomplete-paths'
   ]
   'themes': [
     'flatland-dark-ui'
@@ -33,3 +40,13 @@
     '*.log'
     '*.scssc'
   ]
+'tree-view':
+  'showOnRightSide': true
+'test-status':
+  'autorun': false
+'autocomplete-plus':
+  'enableAutoActivation': false
+  'includeCompletionsFromAllBuffers': true
+'highlight-line':
+  'enableSelectionBorder': true
+'autoclose-html': {}

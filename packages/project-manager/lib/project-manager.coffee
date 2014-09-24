@@ -19,21 +19,24 @@ module.exports =
           if error
             console.log "Error: Could not create #{@file()} - #{error}"
       else
-        @loadSettings()
+        @subscribeToProjectsFile()
+        @loadCurrentProject()
 
     atom.workspaceView.command 'project-manager:save-project', =>
       @createProjectManagerAddView(state).toggle(@)
     atom.workspaceView.command 'project-manager:toggle', =>
       @createProjectManagerView(state).toggle(@)
     atom.workspaceView.command 'project-manager:edit-projects', =>
-      @editProjects()
+      atom.workspaceView.open @file()
     atom.workspaceView.command 'project-manager:reload-project-settings', =>
-      @loadSettings()
+      @loadCurrentProject()
 
-    atom.config.observe 'project-manager.environmentSpecificProjects', (newValue, obj = {}) =>
+    atom.config.observe 'project-manager.environmentSpecificProjects',
+    (newValue, obj = {}) =>
       previous = if obj.previous? then obj.previous else newValue
       unless newValue is previous
         @updateFile()
+        @subscribeToProjectsFile()
 
   file: (update = false) ->
     @filepath = null if update
@@ -57,21 +60,38 @@ module.exports =
           if error
             console.log "Error: Could not create #{@file()} - #{error}"
 
-  loadSettings: ->
+  subscribeToProjectsFile: ->
+    @fileWatcher.close() if @fileWatcher?
+    @fileWatcher = fs.watch @file(), (event, filename) =>
+      @loadCurrentProject()
+
+  loadCurrentProject: ->
     CSON = require 'season'
+    _ = require 'underscore-plus'
     CSON.readFile @file(), (error, data) =>
       unless error
-        for title, project of data
-          for path in project.paths
-            if path is atom.project.getPath()
-              if project.settings?
-                @enableSettings(project.settings)
-              break
+        project = @getCurrentProject(data)
+        if project
+          if project.template? and data[project.template]?
+            project = _.deepExtend(project, data[project.template])
+          @enableSettings(project.settings) if project.settings?
+
+  getCurrentProject: (projects) ->
+    for title, project of projects
+      for path in project.paths
+        if path is atom.project.getPath()
+          return project
+    return false
 
   enableSettings: (settings) ->
+    _ = require 'underscore-plus'
+    projectSettings = {}
     for setting, value of settings
-      atom.workspace.eachEditor (editor) ->
-        editor[setting](value)
+      _.setValueForKeyPath(projectSettings, setting, value)
+      atom.config.settings = _.deepExtend(
+        projectSettings,
+        atom.config.settings)
+    atom.config.emit('updated')
 
   addProject: (project) ->
     CSON = require 'season'
@@ -79,27 +99,24 @@ module.exports =
     projects[project.title] = project
     CSON.writeFileSync(@file(), projects)
 
-  openProject: ({title, paths}) ->
+  openProject: ({title, paths, devMode}) ->
     atom.open options =
       pathsToOpen: paths
+      devMode: devMode
 
-    if atom.config.get('project-manager.closeCurrent') or not atom.project.getPath()
-      atom.close()
-
-  editProjects: ->
-    config =
-      title: 'Config'
-      paths: [@file()]
-    @openProject(config)
+    if atom.config.get('project-manager.closeCurrent')
+      setTimeout ->
+        atom.close()
+      , 200
 
   createProjectManagerView: (state) ->
     unless @projectManagerView?
       ProjectManagerView = require './project-manager-view'
-      @projectManagerView = new ProjectManagerView(state.projectManagerViewState)
+      @projectManagerView = new ProjectManagerView()
     @projectManagerView
 
   createProjectManagerAddView: (state) ->
     unless @projectManagerAddView?
       ProjectManagerAddView = require './project-manager-add-view'
-      @projectManagerAddView = new ProjectManagerAddView(state.projectManagerAddViewState)
+      @projectManagerAddView = new ProjectManagerAddView()
     @projectManagerAddView

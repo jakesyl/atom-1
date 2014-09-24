@@ -44,12 +44,16 @@ describe "SourceInfo", ->
       expect(@params.activeFile()).toBe("fooDirectory/foo_test.rb")
 
   describe "::currentLine", ->
-    it "is the cursor screenRow() plus 1", ->
+    it "is the cursor getBufferRow() plus 1", ->
       cursor =
-        getScreenRow: ->
+        getBufferRow: ->
           99
       @editor.getCursor = -> cursor
       expect(@params.currentLine()).toBe(100)
+
+  describe "::currentShell", ->
+    it "when ruby-test.shell is null", ->
+      expect(@params.currentShell).toBe('bash')
 
   afterEach ->
     delete atom.project

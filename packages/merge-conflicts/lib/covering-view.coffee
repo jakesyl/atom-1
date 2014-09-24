@@ -30,14 +30,18 @@ class CoveringView extends View
   getModel: -> null
 
   reposition: ->
+    # FIXME this is a workaround for an EditorView bug.
+    # https://github.com/atom/atom/pull/3517
+    @editorView.component.checkForVisibilityChange()
+
     marker = @cover()
-    anchor = @adapter.linesElement().offset()
+    anchor = @editorView.offset()
     ref = @offsetForMarker marker
 
     @offset top: ref.top + anchor.top
     @height @editorView.lineHeight
 
-  editor: -> @editorView.getEditor()
+  editor: -> @editorView.getModel()
 
   buffer: -> @editor().getBuffer()
 
@@ -45,7 +49,7 @@ class CoveringView extends View
 
   offsetForMarker: (marker) ->
     position = marker.getTailBufferPosition()
-    @editorView.pixelPositionForBufferPosition position
+    @editor().pixelPositionForBufferPosition position
 
   deleteMarker: (marker) ->
     @buffer().delete marker.getBufferRange()
@@ -55,10 +59,13 @@ class CoveringView extends View
     @editor().setCursorBufferPosition positionOrNull if positionOrNull?
 
   prependKeystroke: (eventName, element) ->
-    bindings = atom.keymap.keyBindingsMatchingElement @editorView
-    for e in bindings when e.command is eventName
+    bindings = atom.keymap.findKeyBindings
+      target: @editorView[0]
+      command: eventName
+
+    for e in bindings
       original = element.text()
-      element.text(_.humanizeKeystroke(e.keystroke) + " #{original}")
+      element.text(_.humanizeKeystroke(e.keystrokes) + " #{original}")
 
 module.exports =
   CoveringView: CoveringView

@@ -1,7 +1,9 @@
 path    = require 'path'
 {spawn} = require 'child_process'
 
-glob    = require 'glob'
+glob = require 'glob'
+
+config = require './config'
 
 module.exports =
 # Internal: Finds the correct test command to run based on what "file" it can
@@ -21,7 +23,7 @@ class CommandRunner
   run: ->
     return unless atom.project.path?
 
-    cfg = atom.config.get('test-status')
+    cfg = config.readOrInitConfig()
     cmd = null
 
     for file in Object.keys(cfg)
@@ -41,12 +43,16 @@ class CommandRunner
   #
   # Returns nothing.
   execute: (cmd) ->
+    return if @running
+    @running = true
+
     @testStatus.removeClass('success fail').addClass('pending')
 
     cmd = cmd.split(' ')
 
     try
       proc = spawn(cmd.shift(), cmd, cwd: atom.project.path)
+
       output = ''
 
       proc.stdout.on 'data', (data) ->
@@ -56,6 +62,7 @@ class CommandRunner
         output += data.toString()
 
       proc.on 'close', (code) =>
+        @running = false
         @testStatusView.update(output)
 
         if code is 0
@@ -65,5 +72,6 @@ class CommandRunner
           atom.emit 'test-status:fail'
           @testStatus.removeClass('pending success').addClass('fail')
     catch err
+      @running = false
       @testStatus.removeClass('pending success').addClass('fail')
       @testStatusView.update('An error occured while attempting to run the test command')

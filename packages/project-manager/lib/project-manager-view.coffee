@@ -1,5 +1,6 @@
 {$, $$, SelectListView, View} = require 'atom'
 CSON = require 'season'
+_ = require 'underscore-plus'
 
 module.exports =
 class ProjectManagerView extends SelectListView
@@ -36,7 +37,8 @@ class ProjectManagerView extends SelectListView
     projects = []
     currentProjects = CSON.readFileSync(@projectManager.file())
     for title, project of currentProjects
-      projects.push(project)
+      project = _.deepExtend(project, currentProjects[project.template]) if project.template?
+      projects.push(project) if project.paths?
 
     if atom.config.get('project-manager.sortByTitle')
       projects = @sortBy(projects, 'title')
@@ -53,11 +55,11 @@ class ProjectManagerView extends SelectListView
         if atom.config.get('project-manager.showPath')
           @div class: 'secondary-line no-icon', path for path in paths
 
-  confirmed: ({title, paths}) ->
+  confirmed: (project) ->
     @cancel()
-    @projectManager.openProject({title, paths})
+    @projectManager.openProject(project)
 
-  sortBy: (arr, key) =>
+  sortBy: (arr, key) ->
     arr.sort (a, b) ->
       a[key].toUpperCase() > b[key].toUpperCase()
 

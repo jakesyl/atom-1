@@ -1,9 +1,7 @@
-{spawn} = require 'child_process'
-
 {View} = require 'atom'
 
 TestStatusView = require './test-status-view'
-CommandRunner = require './command-runner'
+CommandRunner  = require './command-runner'
 
 module.exports =
 # Internal: A status bar view for the test status icon.
@@ -55,10 +53,10 @@ class TestStatusStatusBarView extends View
     buffer = editor.getBuffer()
 
     @subscribe buffer.on 'saved', =>
+      return unless atom.config.get('test-status.autorun')
       @commandRunner.run()
 
     @subscribe buffer.on 'destroyed', =>
-      @testStatus.removeClass('pending success fail')
       @unsubscribe(buffer)
 
   # Internal: Unsubscribe from all events on the editor buffer.

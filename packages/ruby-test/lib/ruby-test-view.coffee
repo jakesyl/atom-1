@@ -22,6 +22,7 @@ class RubyTestView extends View
     atom.workspaceView.command "ruby-test:test-single", => @testSingle()
     atom.workspaceView.command "ruby-test:test-previous", => @testPrevious()
     atom.workspaceView.command "ruby-test:test-all", => @testAll()
+    atom.workspaceView.command "ruby-test:cancel", => @cancelTest()
     new ResizeHandle(@)
 
   # Returns an object that can be retrieved when package is activated
@@ -52,10 +53,12 @@ class RubyTestView extends View
 
   testPrevious: ->
     return unless @runner
+    atom.workspace.getActiveEditor().save()
     @newTestView()
     @runner.run()
 
   runTest: (overrideParams) ->
+    atom.workspace.getActiveEditor().save()
     @newTestView()
     params = _.extend({}, @testRunnerParams(), overrideParams || {})
     @runner = new TestRunner(params)
@@ -94,3 +97,8 @@ class RubyTestView extends View
   flush: ->
     @results.html(@output)
     @results.parent().scrollTop(@results.innerHeight())
+
+  cancelTest: ->
+    @runner.cancel()
+    @spinner?.hide()
+    @write('\nTests canceled')
