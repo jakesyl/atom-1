@@ -1,7 +1,7 @@
 {
   "name": "rspec",
   "main": "./lib/rspec",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "private": true,
   "description": "Atom RSpec runner package",
   "activationEvents": [
@@ -25,10 +25,10 @@
     "url": "https://github.com/fcoury/atom-rspec/issues"
   },
   "homepage": "https://github.com/fcoury/atom-rspec",
-  "_id": "rspec@0.1.7",
+  "_id": "rspec@0.1.9",
   "dist": {
-    "shasum": "fddc408392463d69206cb6ac2497129f9daf89bc"
+    "shasum": "9640e71f68980ea8d8d95812258efcba31768d24"
   },
-  "_resolved": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114628-7040-8fdzzx/package.tgz",
-  "_from": "/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114628-7040-8fdzzx/package.tgz"
+  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114910-54215-plk4qq/package.tgz",
+  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114910-54215-plk4qq/package.tgz"
 }

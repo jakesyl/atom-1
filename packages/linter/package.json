@@ -1,7 +1,7 @@
 {
   "name": "linter",
   "main": "./lib/init",
-  "version": "0.7.1",
+  "version": "0.7.3",
   "private": true,
   "description": "Validates your code using linters.",
   "repository": {
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "chai": "^1.9.1",
-    "copy-paste": "^0.2.2",
     "emissary": "^1.0.0",
     "jshint": "^2.4.4",
     "lodash": "^2.4.1",
@@ -46,10 +45,10 @@
     "url": "https://github.com/AtomLinter/Linter/issues"
   },
   "homepage": "https://github.com/AtomLinter/Linter",
-  "_id": "linter@0.7.1",
+  "_id": "linter@0.7.3",
   "dist": {
-    "shasum": "e60e9f803f421b4cbd9a340b3084d94acd48fbe4"
+    "shasum": "3b6f6e372083b116a8028abec9475ad5254e2953"
   },
-  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-1d6f5u6/package.tgz",
-  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-1d6f5u6/package.tgz"
+  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114826-43084-ffh63q/package.tgz",
+  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114826-43084-ffh63q/package.tgz"
 }

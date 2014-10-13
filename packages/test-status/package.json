@@ -1,7 +1,7 @@
 {
   "name": "test-status",
   "main": "./lib/test-status",
-  "version": "0.25.1",
+  "version": "0.26.1",
   "description": "Adds the status of your testing command to the status bar",
   "repository": {
     "type": "git",
@@ -22,10 +22,10 @@
     "url": "https://github.com/tombell/test-status/issues"
   },
   "homepage": "https://github.com/tombell/test-status",
-  "_id": "test-status@0.25.1",
+  "_id": "test-status@0.26.1",
   "dist": {
-    "shasum": "115d373f38766a0105577c6d2aa93c5f878fa914"
+    "shasum": "3302e3c4e5019ec2e5462ccf1d8e4554015a6c26"
   },
-  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-e9x1k3/package.tgz",
-  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-e9x1k3/package.tgz"
+  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-11497-38777-1r8m8uw/package.tgz",
+  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-11497-38777-1r8m8uw/package.tgz"
 }

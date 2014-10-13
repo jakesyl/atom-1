@@ -1,7 +1,7 @@
 {
   "name": "atom-color-highlight",
   "main": "./lib/atom-color-highlight",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "description": "Highlights color in files",
   "repository": {
@@ -30,10 +30,10 @@
     "url": "https://github.com/abe33/atom-color-highlight/issues"
   },
   "homepage": "https://github.com/abe33/atom-color-highlight",
-  "_id": "atom-color-highlight@1.0.4",
+  "_id": "atom-color-highlight@1.0.5",
   "dist": {
-    "shasum": "6f4a46cd9f2b08feb46c93bca2dcb5475014cb49"
+    "shasum": "c17bcff0e9ddd3f05b2be3f203686c1959633382"
   },
-  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-1k3prsd/package.tgz",
-  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-114823-26130-1k3prsd/package.tgz"
+  "_resolved": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-11492-12859-qgq3ns/package.tgz",
+  "_from": "/private/var/folders/tv/2mrcbc6x0mq1ccmqvlf2ncsr0000gn/T/d-11492-12859-qgq3ns/package.tgz"
 }
