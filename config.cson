@@ -1,51 +1,46 @@
 'editor':
-  'fontSize': 14
-  'softWrap': true
   'showIndentGuide': true
-  'showInvisibles': true
-  'normalizeIndentOnPaste': false
+  'fontFamily': 'Menlo'
+  'fontSize': 12
   'invisibles': {}
 'core':
-  'audioBeep': false
-  'disabledPackages': [
-    'autocomplete-plus'
-    'markdown-format'
-    'term'
-    'git-show'
-    'deprecation-cop'
-    'exception-reporting'
-    'feedback'
-    'autocomplete-paths'
+  'excludeVcsIgnoredPaths': true
+  'projectHome': '~/Code'
+  'ignoredNames': [
+    '.bundle'
+    '.git'
+    'log'
+    'repositories'
+    'tmp'
+    'vendor'
   ]
   'themes': [
-    'flatland-dark-ui'
-    'ir-black-syntax'
+    'atom-light-ui'
+    'atom-light-syntax'
   ]
-  'ignoredNames': [
-    '.git'
-    '.log'
-    '.scssc'
+  'hideGitIgnoredFiles': true
+'spell-check':
+  'grammars': [
+    'text.plain'
+    'source.gfm'
+    'text.git-commit'
   ]
-'exception-reporting':
-  'userId': '269a4d18-9704-90cc-4545-df739b838308'
 'welcome':
   'showOnStartup': false
-'metrics':
-  'userId': 'ef6ff791d0475579aa49d06b66838c195996b556'
-'find-and-replace':
-  'focusEditorAfterSearch': true
-'fuzzy-finder':
-  'ignoredNames': [
-    '*.log'
-    '*.scssc'
-  ]
+'release-notes':
+  'viewedVersion': '0.124.0'
 'tree-view':
-  'showOnRightSide': true
-'test-status':
-  'autorun': false
-'autocomplete-plus':
-  'enableAutoActivation': false
-  'includeCompletionsFromAllBuffers': true
-'highlight-line':
-  'enableSelectionBorder': true
-'autoclose-html': {}
+  'hideVcsIgnoredFiles': true
+'autosave':
+  'enabled': true
+'exception-reporting':
+  'userId': '6140a965-4d62-af5d-52d0-41b52facd67e'
+'metrics':
+  'userId': '4e9cdd4d889a0eb88c49055f3864bf6ab8e30b5e'
+'tabs':
+  'tabScrolling': true
+'whitespace': {}
+'atom-beautify':
+  '_analyticsUserId': '49772381-dc99-4a0f-bc9b-ee33c6b3c225'
+'jshint':
+  'validateOnlyOnSave': true
